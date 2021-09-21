@@ -39,10 +39,10 @@ class _HomePageState extends State<HomePage> {
         }),
         items: [
         new BottomNavigationBarItem(
-          icon: Icon(Icons.schedule),
+          icon: Icon(Icons.calendar_today),
           title: Text('Calendar'),
         ), new BottomNavigationBarItem(
-          icon: Icon(Icons.mail),
+          icon: Icon(Icons.checklist),
           title: Text('To Do'),
         ),
         new BottomNavigationBarItem(
