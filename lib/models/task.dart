@@ -8,3 +8,5 @@ class Task {
 
   Task({this.completed,this.title,this.description,this.date,this.id});
 
+
+}

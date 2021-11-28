@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_calendar/screens/home_page.dart';
-import 'package:flutter_calendar/screens/splash_screen.dart';
+import 'package:flutter_calendar/pages/splash_screen.dart';
 
 void main() {
   runApp(MyApp());
