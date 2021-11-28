@@ -12,13 +12,17 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
 
-  Color _themeColor=Color(0xff30384c);
+  Color _themeColor=Color(0xFF6464A7);
+  Color _text=Color(0xFF292B5B);
+  Color _orange=Color(0xFFE65100);
+  Color _lime=Color(0xFF8ABD91);
+
   CalendarController calController;
   TextEditingController tfTitleController=TextEditingController();
   TextEditingController tfDecController=TextEditingController();
   GlobalKey<FormState> key=GlobalKey();
   List taskList=List();
-  final dateFormat=new DateFormat("d EEE, MMM ''yyyy");
+  final dateFormat=new DateFormat("yMMMMd");
   DateTime _selectedDate=DateTime.now();
 
   @override
@@ -61,13 +65,13 @@ class _HomePageState extends State<HomePage> {
       padding: EdgeInsets.only(left: 10),
       alignment: Alignment.centerLeft,
       decoration: BoxDecoration(
-        color: Colors.white,
+        color: Color(0xFFFFBB39),
         borderRadius: BorderRadius.circular(20),
       ),
 
       child: Icon(
         Icons.edit,
-        color: _themeColor,
+        color: _text,
         size:25,
       ),
     );
@@ -79,13 +83,13 @@ class _HomePageState extends State<HomePage> {
       alignment: Alignment.centerRight,
 
       decoration: BoxDecoration(
-        color: Colors.white,
+        color: Color(0xFFE2725B),
         borderRadius: BorderRadius.circular(20),
       ),
       padding: EdgeInsets.only(right: 10),
       child: Icon(
         Icons.delete,
-        color: _themeColor,
+        color: _text,
         size: 25,
       ),
     );
@@ -157,14 +161,14 @@ class _HomePageState extends State<HomePage> {
                                 fontWeight: FontWeight.bold
                             ),
                             decoration: InputDecoration(
-                                hintText: "title",
+                                hintText: "Title",
                                 hintStyle: TextStyle(
                                   color: Colors.grey,
                                   fontSize: 20,
                                 ),
                                 focusedBorder: UnderlineInputBorder(
                                     borderSide: BorderSide(
-                                      color: _themeColor,
+                                      color: _text,
                                     )
                                 )
                             ),
@@ -188,7 +192,7 @@ class _HomePageState extends State<HomePage> {
                                   ),
                                   focusedBorder: UnderlineInputBorder(
                                       borderSide: BorderSide(
-                                        color: _themeColor,
+                                        color: _text,
                                       )
                                   )
                               ),
@@ -201,7 +205,7 @@ class _HomePageState extends State<HomePage> {
                               Text(
                                 "Completed",
                                 style: TextStyle(
-                                  color: _themeColor,
+                                  color: _text,
                                   fontSize: 18,
                                 ),
                               ),
@@ -212,7 +216,7 @@ class _HomePageState extends State<HomePage> {
                                     isCompleted=value;
                                   });
                                 },
-                                activeColor: _themeColor,
+                                activeColor: _text,
                                 checkColor: Colors.white,
                               )
                             ],
@@ -226,7 +230,7 @@ class _HomePageState extends State<HomePage> {
                     Container(
                       padding: EdgeInsets.only(right: 10),
                       child: FlatButton(
-                        color: _themeColor,
+                        color: _text,
                         shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(5)
                         ),
@@ -318,7 +322,7 @@ class _HomePageState extends State<HomePage> {
                 secondaryBackground: getDeleteBg(),
                 background: getEditBg(),
                 child: Card(
-                  color: _themeColor,
+                  color: _text,
                   elevation: 0,
                   shadowColor: Colors.white,
                   child: Row(
@@ -331,7 +335,7 @@ class _HomePageState extends State<HomePage> {
                         size: 30,):
                       Icon(
                         CupertinoIcons.clock_solid,
-                        color: Color(0xffff9e00),
+                        color: Color(0xFFE65100),
                         size: 30,
                       ),
                       SizedBox(width: 10,),
@@ -383,10 +387,10 @@ class _HomePageState extends State<HomePage> {
                 TableCalendar(
                   startingDayOfWeek: StartingDayOfWeek.monday,
                   calendarStyle: CalendarStyle(
-                      weekdayStyle: TextStyle(color: _themeColor,fontWeight: FontWeight.normal,fontSize: 14),
-                      weekendStyle: TextStyle(color: _themeColor,fontWeight: FontWeight.normal,fontSize: 14),
-                      selectedColor: _themeColor,
-                      todayColor: _themeColor,
+                      weekdayStyle: TextStyle(color: _text,fontWeight: FontWeight.normal,fontSize: 14),
+                      weekendStyle: TextStyle(color: _text,fontWeight: FontWeight.normal,fontSize: 14),
+                      selectedColor: _text,
+                      todayColor: _lime,
                       todayStyle: TextStyle(
                           fontSize: 14,
                           color: Colors.white
@@ -409,7 +413,7 @@ class _HomePageState extends State<HomePage> {
                             margin: EdgeInsets.all(5.0),
                             alignment: Alignment.center,
                             decoration: BoxDecoration(
-                              color: _themeColor,
+                              color: _lime,
 
                               borderRadius: BorderRadius.circular(15),
                             ),
@@ -423,11 +427,11 @@ class _HomePageState extends State<HomePage> {
                   ),
                   daysOfWeekStyle: DaysOfWeekStyle(
                       weekendStyle: TextStyle(
-                          color: _themeColor,
+                          color: _text,
                           fontWeight: FontWeight.bold
                       ),
                       weekdayStyle: TextStyle(
-                          color: _themeColor,
+                          color: _text,
                           fontWeight: FontWeight.bold
                       )
 
@@ -436,17 +440,17 @@ class _HomePageState extends State<HomePage> {
                       formatButtonVisible: false,
                       centerHeaderTitle: true,
                       titleTextStyle: TextStyle(
-                        color: _themeColor,
+                        color: _text,
                         fontWeight: FontWeight.bold,
                         fontSize: 20,
                       ),
                       leftChevronIcon: Icon(
                         Icons.chevron_left,
-                        color: _themeColor,
+                        color: _text,
                       ),
                       rightChevronIcon: Icon(
                         Icons.chevron_right,
-                        color: _themeColor,
+                        color: _text,
                       )
                   ),
                   calendarController: calController,
@@ -457,7 +461,7 @@ class _HomePageState extends State<HomePage> {
                     height: MediaQuery.of(context).size.height,
                     width: MediaQuery.of(context).size.width,
                     decoration: BoxDecoration(
-                        color: _themeColor,
+                        color: _text,
                         borderRadius: BorderRadius.only(topRight: Radius.circular(50),topLeft: Radius.circular(30))
                     ),
                     child: Container(
@@ -488,7 +492,7 @@ class _HomePageState extends State<HomePage> {
         floatingActionButton: Container(
           padding: EdgeInsets.all(0),
           decoration: BoxDecoration(
-            color: Colors.white,
+            color: _orange,
             borderRadius: BorderRadius.all(Radius.circular(20)),
             boxShadow: [
 
@@ -511,7 +515,7 @@ class _HomePageState extends State<HomePage> {
 
             child: Icon(
               CupertinoIcons.add,
-              color: _themeColor,
+              color: Colors.white,
 
             ),
           ),
